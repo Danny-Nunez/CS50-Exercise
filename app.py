@@ -1,4 +1,6 @@
 import os
+import requests
+import configparser
 
 from cs50 import SQL
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
@@ -12,6 +14,8 @@ app.config["TEMPLATES_AUTO_RELOAD"] = True
 # Configure CS50 Library to use SQLite database
 db = SQL("sqlite:///birthdays.db")
 
+if __name__=='__main__':
+    app.run(host="0.0.0.0", port=5000)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
